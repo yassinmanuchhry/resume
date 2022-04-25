@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
+
 <head>
     <title>وبسایت شخصی یاسین منوچهری</title>
 
@@ -10,15 +11,17 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <script defer src="~/fontawesome/js/all.js"></script>
-    <link id="theme-style" rel="stylesheet" href="~/css/theme-1.css">
-    <link id="theme-style" rel="stylesheet" href="~/css/style.css">
+    <script defer src="~/assets/fontawesome/js/all.js"></script>
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/theme-1.css">
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/style.css">
 
 </head>
+
 <body>
+
     <header class="header text-center">
         <div class="force-overflow">
-            <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">یاسین منوچهری کرچگانی</a></h1>
+            <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">یاسین منوچهری</a></h1>
 
             <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -29,10 +32,10 @@
 
                 <div id="navigation" class="collapse navbar-collapse flex-column">
                     <div class="profile-section pt-3 pt-lg-0">
-                        <img class="profile-image mb-3 rounded-circle mx-auto" src="~/images/me.jpeg" alt="image">
+                        <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/me.jpeg" alt="image">
 
                         <div class="bio mb-3">
-                            سلام، یاسین منوچهری کرچگانی هستم. به وبسایت شخصی من خوش
+                            سلام، یاسین منوچهری هستم . به وبسایت شخصی من خوش
                             آمدید.
                         </div>
                         <ul class="social-list list-inline py-2 mx-auto">
@@ -48,12 +51,12 @@
                     </div>
                     <ul class="navbar-nav flex-column text-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                <i class="fas fa-user fa-fw ml-2"></i>صفحه اصلی<span class="sr-only">(current)</span>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-user fa-fw ml-2"></i>صفحه اصلی
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">
                                 <i class="fas fa-envelope-open-text fa-fw ml-2"></i>ارتباط با ما
                             </a>
                         </li>
@@ -63,23 +66,26 @@
         </nav>
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+    <div class="main-wrapper">
+       
+        @RenderBody()
+
+        <footer class="footer text-center py-4">
+            <small class="copyright">
+                طراحی  توسط یاسین منوچهری کرچگانی   &copy; <a href="http://www.atriya.com" target="_blank">
+                     
+                    
+                </a>
+            </small>
+        </footer>
+
     </div>
 
-    <footer class="footer text-center py-4">
-        <small class="copyright">
-            طراحی شده توسط یاسین منوچهری کرچگانی &copy; <a href="http://www.Yassin.co" target="_blank">
+    <!-- Javascript -->
+    <script src="~/assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="~/assets/plugins/popper.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+</body>          
 
-
-            </a>
-        </small>
-    </footer>
-    <script src="~/plugins/jquery-3.4.1.min.js"></script>
-    <script src="~/plugins/popper.min.js"></script>
-    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
 </html>
